@@ -2,6 +2,8 @@ const express= require('express')
 const app = express();
 const port = 5000;
 
+const router= require('./routes/routes');
+const router1=require('./routes/routes1');
 app.use(express.json())
 //req---->client/user/frontend
 //res--->server/backend
@@ -28,38 +30,39 @@ app.use(express.json())
 // }
 // app.use(isAdmib)
 
-const firstvalid = function(req,res,next){
-    console.log("first user is valid")
-    next();
-}
-app.use(firstvalid)
+// const firstvalid = function(req,res,next){
+//     console.log("first user is valid")
+//     next();
+// }
+// app.use(firstvalid)
 
-const secondvalid= function(req,res,next){
-    console.log("second user is valid")
-    next();
-}
-app.use(secondvalid)
+// const secondvalid= function(req,res,next){
+//     console.log("second user is valid")
+//     next();
+// }
+// app.use(secondvalid)
 
-const thirdvalid= function(req, res, next){
-    console.log("third user is valid")
-    next();
-}
+// const thirdvalid= function(req, res, next){
+//     console.log("third user is valid")
+//     next();
+// }
 
-app.use(thirdvalid)
-
-
-app.get('/',(req,res)=>{
-    res.send('you are successfully login')
-    // res.json({
-    //     success:true,
-    //     message:"you are successfully login"
-    // })
-
-    console.log(req.body)
-})
+// app.use(thirdvalid)
 
 
+// app.get('/',(req,res)=>{
+//     res.send('you are successfully login')
+//     // res.json({
+//     //     success:true,
+//     //     message:"you are successfully login"
+//     // })
 
+//     console.log(req.body)
+// })
+
+
+app.use('/api',router)  //api/login   api/data
+app.use('/API',router1)
 
 
 
