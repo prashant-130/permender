@@ -2,8 +2,11 @@ const express= require('express')
 const app = express();
 const port = 5000;
 
+const connectdb = require('./db/db')
+connectdb()
 const router= require('./routes/routes');
 const router1=require('./routes/routes1');
+const router2=require('./routes/Db_route')
 app.use(express.json())
 //req---->client/user/frontend
 //res--->server/backend
@@ -64,7 +67,7 @@ app.use(express.json())
 app.use('/api',router)  //api/login   api/data
 app.use('/API',router1)
 
-
+app.use('/mongo',router2)
 
 // app.put('/put',(req,res)=>{
 //     // res.send('data')
