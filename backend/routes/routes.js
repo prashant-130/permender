@@ -27,6 +27,7 @@ const thirdvalid= function(req, res, next){
 
 
 
+
 router.get('/data', firstvalid,secondvalid,thirdvalid,(req,res)=>{
     res.send('you are successfully login')
     // res.json({
