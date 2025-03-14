@@ -50,4 +50,6 @@ router.delete('/array1/:id',async(req,res)=>{
     }
 })
 
+
+
 module.exports = router;

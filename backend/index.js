@@ -1,4 +1,6 @@
 const express= require('express')
+const cors=require('cors')
+
 const app = express();
 const port = 5500;
 const multer = require('multer')
@@ -9,6 +11,7 @@ const router1=require('./routes/routes1');
 const router2=require('./routes/Db_route')
 const router3 = require('./routes1/Db_routes');
 app.use(express.json())
+app.use(cors({origin:'*'}));
 
 // const upload = multer({
 //     storage:multer.diskStorage({
@@ -117,3 +120,4 @@ app.use('/mango',router3)
 //     console.log(req.body)
 // })
 app.listen(port)
+
