@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import react from "react";
 import { useState } from "react";
 import "./App.css";
+import { Table } from "./Components/table";
 
 function App() {
   let [getdata11, setgetdata] = useState([]);
@@ -127,6 +128,8 @@ function App() {
          return element.name
     })
   } */}
+
+  <Table></Table>
     </>
   );
 }
